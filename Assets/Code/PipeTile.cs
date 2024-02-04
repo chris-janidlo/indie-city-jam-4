@@ -42,7 +42,7 @@ public class PipeTile : MonoBehaviour
         
         foreach (var dir in RotatedDirections())
         {
-            Debug.DrawLine(transform.position, transform.position + new Vector3(dir.x, dir.y), Color.blue);
+            Debug.DrawLine(transform.position, transform.position + new Vector3(dir.x/4f, dir.y/4f), Color.blue);
         }
     }
 

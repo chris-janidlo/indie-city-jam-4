@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     {
         animator.speed = Tile.ConnectedToHeart ? 1 : lethargicAnimationSpeed;
         spriteRenderer.color = Tile.ConnectedToHeart ? Color.white : lethargicColor;
+        Debug.DrawLine(transform.position, transform.position + new Vector3(Direction.x, Direction.y), Color.green);
     }
 
     public void OnHeartBeat()
