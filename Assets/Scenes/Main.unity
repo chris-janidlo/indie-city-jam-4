@@ -830,7 +830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRadii: {x: 10, y: 20}
-  beatsPerSpawn: 1
+  beatsPerSpawn: 30
   enemyPrefab: {fileID: 7373792881131217520, guid: 9f7c61101a49c5e4aadb03e8e5b20872, type: 3}
 --- !u!4 &1207429289
 Transform:
