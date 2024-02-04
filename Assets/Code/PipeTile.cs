@@ -21,6 +21,8 @@ public class PipeTile : MonoBehaviour
     [NonSerialized]
     public Vector2Int Position;
 
+    [NonSerialized] public Dictionary<Vector2Int, PipeTile> CurrentAdjacencies = new();
+
     [NonSerialized] public bool IsHeart;
 
     private bool rotating;
@@ -51,6 +53,7 @@ public class PipeTile : MonoBehaviour
     {
         if (IsHeart || rotating) yield break;
         rotating = true;
+        CurrentAdjacencies.Clear();
         yield return Tween.Rotation(
             transform,
             endValue: transform.rotation * Quaternion.Euler(0, 0, 90),

@@ -35,7 +35,10 @@ public class PipeGrid : crass.Singleton<PipeGrid>
     public void UpdateHeartConnections()
     {
         foreach (var tile in Tiles.Values)
+        {
+            tile.CurrentAdjacencies.Clear();
             tile.ConnectedToHeart = false;
+        }
 
         var tested = new HashSet<PipeTile>();
 
@@ -51,6 +54,8 @@ public class PipeGrid : crass.Singleton<PipeGrid>
                 
                 if (!adjTile.RotatedDirections().Contains(-dir)) continue;
 
+                tile.CurrentAdjacencies[dir] = adjTile;
+                adjTile.CurrentAdjacencies[-dir] = tile; 
                 propagateConnection(adjTile);
             }
         }
