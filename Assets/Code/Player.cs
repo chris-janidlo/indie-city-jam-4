@@ -10,11 +10,23 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Ease moveEase;
     [SerializeField] private float moveTime;
+
+    [SerializeField] private float lethargicAnimationSpeed;
+    [SerializeField] private Color lethargicColor;
+    
     [SerializeField] private new Rigidbody2D rigidbody;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Animator animator;
     
     void Start()
     {
         rigidbody.position = Tile.transform.position;
+    }
+
+    void Update()
+    {
+        animator.speed = Tile.ConnectedToHeart ? 1 : lethargicAnimationSpeed;
+        spriteRenderer.color = Tile.ConnectedToHeart ? Color.white : lethargicColor;
     }
 
     public void OnHeartBeat()
@@ -53,7 +65,7 @@ public class Player : MonoBehaviour
         if (next == null) return;
 
         Tween.RigidbodyMovePosition(rigidbody, next.transform.position, moveTime, moveEase);
-        transform.up = new Vector3(Direction.x, Direction.y);
+        // transform.up = new Vector3(Direction.x, Direction.y);
         Tile = next;
     }
 }

@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 3276842202236806637, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 589286156, guid: e3701cdeb9b7fef46927e35fc70a89bd, type: 3}
+      objectReference: {fileID: -2126379761, guid: 96c987fbf1e03d345b3e8e7bd00d1285, type: 3}
     - target: {fileID: 3276842202236806637, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -51,6 +51,34 @@ PrefabInstance:
     - target: {fileID: 3454955203974804522, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
       propertyPath: connectingDirections.Array.data[3].y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991158882817566490, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991158882817566490, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991158882817566490, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991158882817566490, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991158882817566490, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991158882817566490, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991158882817566490, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
+      propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4782825821220408843, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
       propertyPath: m_LocalPosition.x

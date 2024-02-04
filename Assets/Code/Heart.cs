@@ -9,10 +9,9 @@ using UnityEngine.Serialization;
 public class Heart : Singleton<Heart>
 {
     public UnityEvent OnHeartBeat;
+    [SerializeField] private float beatInterval;
 
-    [SerializeField] private float beatScale;
-
-    [SerializeField] private TweenSettings expandTween, contractTween;
+    [SerializeField] private Animator animator;
     
     void Awake()
     {
@@ -21,11 +20,12 @@ public class Heart : Singleton<Heart>
 
     IEnumerator Start()
     {
+        var wait = new WaitForSeconds(beatInterval);
         while (true)
         {
-            yield return Tween.Scale(transform, Vector3.one * beatScale, expandTween).ToYieldInstruction();
+            yield return wait;
             OnHeartBeat.Invoke();
-            yield return Tween.Scale(transform, Vector3.one, contractTween).ToYieldInstruction();
+            animator.SetTrigger("Beat");
         }
     }
 }

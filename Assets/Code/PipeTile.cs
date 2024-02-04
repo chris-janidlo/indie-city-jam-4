@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using crass;
 using PrimeTween;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -14,7 +15,9 @@ public class PipeTile : MonoBehaviour
     [SerializeField] private float rotateTime;
 
     [SerializeField] private SpriteRenderer spriteRenderer;
-
+    [SerializeField] private Color nonConnectedColor;
+    [SerializeField] private List<Sprite> possibleSprites;
+    
     [NonSerialized]
     public bool ConnectedToHeart;
 
@@ -30,11 +33,12 @@ public class PipeTile : MonoBehaviour
     void Awake()
     {
         Position = Vector2Int.RoundToInt(transform.position);
+        if (possibleSprites.Count > 0) spriteRenderer.sprite = possibleSprites.PickRandom();
     }
 
     void Update()
     {
-        spriteRenderer.color = ConnectedToHeart ? Color.red : Color.white;
+        spriteRenderer.color = ConnectedToHeart ? Color.white : nonConnectedColor;
         
         foreach (var dir in RotatedDirections())
         {
