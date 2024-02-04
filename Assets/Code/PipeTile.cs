@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using PrimeTween;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -32,6 +33,18 @@ public class PipeTile : MonoBehaviour
     void Update()
     {
         spriteRenderer.color = ConnectedToHeart ? Color.red : Color.white;
+        
+        foreach (var dir in RotatedDirections())
+        {
+            Debug.DrawLine(transform.position, transform.position + new Vector3(dir.x, dir.y), Color.blue);
+        }
+    }
+
+    public List<Vector2Int> RotatedDirections()
+    {
+        return connectingDirections
+            .Select(dir => Vector2Int.RoundToInt(transform.rotation * new Vector3(dir.x, dir.y)))
+            .ToList();
     }
 
     IEnumerator OnMouseUpAsButton()

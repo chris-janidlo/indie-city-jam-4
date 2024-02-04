@@ -42,15 +42,15 @@ public class PipeGrid : crass.Singleton<PipeGrid>
         void propagateConnection(PipeTile tile)
         {
             tile.ConnectedToHeart = true;
-            foreach (var dir in tile.connectingDirections)
+            tested.Add(tile);
+            foreach (var dir in tile.RotatedDirections())
             {
-                var rotatedDir = Vector2Int.RoundToInt(tile.transform.rotation * new Vector3(dir.x, dir.y));
-                if (!Tiles.TryGetValue(tile.Position + rotatedDir, out var adjTile)) continue;
-                
-                // ReSharper disable once CanSimplifySetAddingWithSingleCall
-                if (tested.Contains(adjTile)) continue;
+                if (!Tiles.TryGetValue(tile.Position + dir, out var adjTile)) continue;
 
-                tested.Add(adjTile);
+                if (tested.Contains(adjTile)) continue;
+                
+                if (!adjTile.RotatedDirections().Contains(-dir)) continue;
+
                 propagateConnection(adjTile);
             }
         }
