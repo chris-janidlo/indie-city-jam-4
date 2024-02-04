@@ -47,13 +47,15 @@ public class PipeGrid : crass.Singleton<PipeGrid>
             foreach (var dir in tile.RotatedDirections())
             {
                 if (!Tiles.TryGetValue(tile.Position + dir, out var adjTile)) continue;
-
-                if (tested.Contains(adjTile)) continue;
                 
                 if (!adjTile.RotatedDirections().Contains(-dir)) continue;
-
+                
+                // setup adjacencies even to already tested tiles
                 tile.CurrentAdjacencies[dir] = adjTile;
                 adjTile.CurrentAdjacencies[-dir] = tile; 
+
+                if (tested.Contains(adjTile)) continue;
+
                 propagateConnection(adjTile);
             }
         }

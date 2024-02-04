@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using crass;
 using PrimeTween;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -44,6 +45,11 @@ public class PipeTile : MonoBehaviour
         {
             Debug.DrawLine(transform.position, transform.position + new Vector3(dir.x/4f, dir.y/4f), Color.blue);
         }
+    }
+
+    void OnDrawGizmos()
+    {
+        Handles.Label(transform.position, name);
     }
 
     public List<Vector2Int> RotatedDirections()
