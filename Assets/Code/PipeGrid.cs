@@ -13,6 +13,11 @@ public class PipeGrid : crass.Singleton<PipeGrid>
     [NonSerialized]
     public Dictionary<Vector2Int, PipeTile> Tiles;
 
+    private void Awake()
+    {
+        SingletonSetInstance(this, true);
+    }
+
     private void Start()
     {
         Tiles = new();
@@ -21,6 +26,7 @@ public class PipeGrid : crass.Singleton<PipeGrid>
             Tiles[tile.Position] = tile;
         }
 
+        heart.IsHeart = true;
         Tiles[heart.Position] = heart;
         
         UpdateHeartConnections();
@@ -38,8 +44,8 @@ public class PipeGrid : crass.Singleton<PipeGrid>
             tile.ConnectedToHeart = true;
             foreach (var dir in tile.connectingDirections)
             {
-                // TODO account for rotation
-                if (!Tiles.TryGetValue(tile.Position + dir, out var adjTile)) continue;
+                var rotatedDir = Vector2Int.RoundToInt(tile.transform.rotation * new Vector3(dir.x, dir.y));
+                if (!Tiles.TryGetValue(tile.Position + rotatedDir, out var adjTile)) continue;
                 
                 // ReSharper disable once CanSimplifySetAddingWithSingleCall
                 if (tested.Contains(adjTile)) continue;
