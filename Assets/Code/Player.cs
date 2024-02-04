@@ -10,10 +10,11 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Ease moveEase;
     [SerializeField] private float moveTime;
+    [SerializeField] private new Rigidbody2D rigidbody;
     
     void Start()
     {
-        transform.position = Tile.transform.position;
+        rigidbody.position = Tile.transform.position;
     }
 
     public void OnHeartBeat()
@@ -51,7 +52,7 @@ public class Player : MonoBehaviour
         
         if (next == null) return;
 
-        Tween.Position(transform, next.transform.position, moveTime, moveEase);
+        Tween.RigidbodyMovePosition(rigidbody, next.transform.position, moveTime, moveEase);
         transform.up = new Vector3(Direction.x, Direction.y);
         Tile = next;
     }
