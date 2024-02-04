@@ -7,8 +7,6 @@ using Unity.VisualScripting;
 public class PipeGrid : crass.Singleton<PipeGrid>
 {
     [SerializeField] private PipeTile heart;
-    [SerializeField]
-    private List<PipeTile> initialTiles;
     
     [NonSerialized]
     public Dictionary<Vector2Int, PipeTile> Tiles;
@@ -21,7 +19,7 @@ public class PipeGrid : crass.Singleton<PipeGrid>
     private void Start()
     {
         Tiles = new();
-        foreach (var tile in initialTiles)
+        foreach (var tile in GetComponentsInChildren<PipeTile>())
         {
             Tiles[tile.Position] = tile;
         }
