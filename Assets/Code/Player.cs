@@ -16,9 +16,9 @@ public class Player : MonoBehaviour
         transform.position = Tile.transform.position;
     }
 
-    void Update()
+    public void OnHeartBeat()
     {
-        if (Input.GetKeyUp(KeyCode.Space)) Move();
+        Move();
     }
 
     private void Move()

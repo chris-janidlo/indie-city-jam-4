@@ -295,6 +295,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Heart
       objectReference: {fileID: 0}
+    - target: {fileID: 6812178242263559374, guid: 4143c81b2b4a7de46aeff497c851c84b, type: 3}
+      propertyPath: OnHeartBeat.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812178242263559374, guid: 4143c81b2b4a7de46aeff497c851c84b, type: 3}
+      propertyPath: OnHeartBeat.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812178242263559374, guid: 4143c81b2b4a7de46aeff497c851c84b, type: 3}
+      propertyPath: OnHeartBeat.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 757906766}
+    - target: {fileID: 6812178242263559374, guid: 4143c81b2b4a7de46aeff497c851c84b, type: 3}
+      propertyPath: OnHeartBeat.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812178242263559374, guid: 4143c81b2b4a7de46aeff497c851c84b, type: 3}
+      propertyPath: OnHeartBeat.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnHeartBeat
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812178242263559374, guid: 4143c81b2b4a7de46aeff497c851c84b, type: 3}
+      propertyPath: OnHeartBeat.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812178242263559374, guid: 4143c81b2b4a7de46aeff497c851c84b, type: 3}
+      propertyPath: OnHeartBeat.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7817120135109545123, guid: 4143c81b2b4a7de46aeff497c851c84b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1057,6 +1085,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 282840814}
   - {fileID: 1794478710}
+  - {fileID: 757906767}
   - {fileID: 318038733}
   - {fileID: 1854273385}
   - {fileID: 410458938}
@@ -1067,4 +1096,3 @@ SceneRoots:
   - {fileID: 1859936652}
   - {fileID: 1003143744}
   - {fileID: 745780833}
-  - {fileID: 757906767}

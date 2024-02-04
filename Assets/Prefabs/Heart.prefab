@@ -52,6 +52,34 @@ PrefabInstance:
       propertyPath: connectingDirections.Array.data[3].y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3991158882817566490, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991158882817566490, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991158882817566490, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991158882817566490, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991158882817566490, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991158882817566490, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991158882817566490, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
+      propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4782825821220408843, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -99,5 +127,57 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7464446210173850141, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 6812178242263559374}
   m_SourcePrefab: {fileID: 100100000, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
+--- !u!1 &5299880934450319541 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7464446210173850141, guid: 2dfa991169ada5f4d9bcc8c1ef43b641, type: 3}
+  m_PrefabInstance: {fileID: 3322530517243036328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6812178242263559374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5299880934450319541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f594139c6fb90d4abf9caf22cdd2aea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHeartBeat:
+    m_PersistentCalls:
+      m_Calls: []
+  beatScale: 2
+  expandTween:
+    duration: 1
+    ease: 6
+    customEase:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    cycles: 1
+    cycleMode: 0
+    startDelay: 0
+    endDelay: 0
+    useUnscaledTime: 0
+  contractTween:
+    duration: 0.5
+    ease: 30
+    customEase:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    cycles: 1
+    cycleMode: 0
+    startDelay: 0
+    endDelay: 0
+    useUnscaledTime: 0
