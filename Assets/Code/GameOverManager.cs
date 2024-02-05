@@ -10,7 +10,12 @@ public class GameOverManager : MonoBehaviour
     IEnumerator Start()
     {
         yield return new WaitForSeconds(WaitTime);
-        SceneManager.LoadScene("Main");
+        while (true)
+        {
+            if (Input.anyKey)
+                SceneManager.LoadScene("Main");
+            yield return null;
+        }
     }
 
     // Update is called once per frame

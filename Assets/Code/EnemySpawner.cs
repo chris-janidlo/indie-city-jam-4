@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using crass;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -12,7 +13,9 @@ public class EnemySpawner : Singleton<EnemySpawner>
     [SerializeField] private int beatsPerSpawn, beatResetAfterLastEnemyDies;
     [SerializeField] private Enemy enemyPrefab;
 
-    private int enemyCount;
+    [SerializeField] private TextMeshProUGUI killCountLabel;
+
+    private int enemyCount, killCount;
     private int beatCounter = 1;
 
     void Awake()
@@ -35,6 +38,8 @@ public class EnemySpawner : Singleton<EnemySpawner>
         {
             enemyCount = 0; // paranoid
             beatCounter = beatResetAfterLastEnemyDies;
+
+            killCountLabel.text = (++killCount).ToString();
         }
     }
 
