@@ -4,18 +4,19 @@ using System.Collections.Generic;
 using crass;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = Unity.Mathematics.Random;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int beatsPerMove;
     [SerializeField] private new Rigidbody2D rigidbody;
-
+    
     private int beatCounter;
 
     void Update()
     {
-        if (rigidbody.position == Vector2.zero) Debug.Log("game over");
+        if (rigidbody.position == Vector2.zero) SceneManager.LoadScene("Game Over");
     }
 
     void OnEnable()
