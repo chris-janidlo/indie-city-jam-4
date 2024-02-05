@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.TryGetComponent<Player>(out _))
         {
+            EnemySpawner.Instance.NotifyEnemyDied();
             Destroy(gameObject);
         }
     }
