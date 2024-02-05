@@ -23,7 +23,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Spawn()
     {
-        var pos = Random.insideUnitCircle * Random.Range(spawnRadii.x, spawnRadii.y);
+        var pos = Random.insideUnitCircle.normalized * Random.Range(spawnRadii.x, spawnRadii.y);
         var roundPos = Vector2Int.RoundToInt(pos);
         Instantiate(enemyPrefab, new Vector3(roundPos.x, roundPos.y), Quaternion.identity);
     }

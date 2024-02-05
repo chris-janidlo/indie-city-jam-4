@@ -3384,7 +3384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd2a9b85d3a4cb64e8baa03bac53f0e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRadii: {x: 10, y: 20}
+  spawnRadii: {x: 5, y: 6}
   beatsPerSpawn: 30
   enemyPrefab: {fileID: 7373792881131217520, guid: 9f7c61101a49c5e4aadb03e8e5b20872, type: 3}
 --- !u!4 &1207429289
